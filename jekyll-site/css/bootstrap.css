@@ -5564,6 +5564,18 @@ button.close {
   }
 }
 
+.stat-tag {
+  float: left;
+  min-width: 1em;
+  margin: 0 .5rem 0 0;
+  text-align: right;
+}
+
+.stat-text {
+  display: table-cell;
+  margin: 0;
+}
+
 .clearfix::after {
   display: table;
   clear: both;
