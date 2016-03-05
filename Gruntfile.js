@@ -20,7 +20,7 @@ grunt.initConfig({
     // compile jekyll-site to 'dist'
     shell: {
         target: {
-            command: 'jekyll build -s, --source jekyll-site -d dist',
+            command: 'jekyll build --verbose -s, --source jekyll-site -d dist',
         },
     },
 

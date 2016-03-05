@@ -5564,7 +5564,18 @@ button.close {
   }
 }
 
-.stat-tag {
+.index-number {
+  float: left;
+  width: 6em;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+.index-text {
+  overflow: hidden;
+}
+
+.stat-number {
   float: left;
   min-width: 1em;
   margin: 0 .5rem 0 0;
