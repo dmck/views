@@ -11,15 +11,15 @@ grunt.initConfig({
     // copy compiled 'bootstrap' to 'jekyll-site'
     copy: {
       bootstrap: {
-		expand: true,
-		cwd: 'bootstrap/dist',
-		src: '**',
-		dest: 'jekyll-site/',
-	  },
+		    expand: true,
+		    cwd: 'bootstrap/dist',
+		    src: '**',
+		    dest: 'jekyll-site/',
+      },
     },
     // compile jekyll-site to 'dist'
     shell: {
-        target: {
+        build: {
             command: 'jekyll build --verbose -s, --source jekyll-site -d dist',
         },
     },

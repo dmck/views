@@ -2,10 +2,10 @@
 	<!-- _includes/base.html -->
 	{% assign base = '' %}
 	{% assign depth = page.url | split: '/' | size | minus: 1 %}
-	{% if    depth == 1 %}{% assign base = '..' %}
-	{% elsif depth == 2 %}{% assign base = '../..' %}
-	{% elsif depth == 3 %}{% assign base = '../../..' %}
-	{% elsif depth == 4 %}{% assign base = '../../../..' %}{% endif %}
+	{% if    depth == 1 %}{% assign base = '../' %}
+	{% elsif depth == 2 %}{% assign base = '../../' %}
+	{% elsif depth == 3 %}{% assign base = '../../../' %}
+	{% elsif depth == 4 %}{% assign base = '../../../../' %}{% endif %}
 	<!-- Required meta tags always come first -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +14,7 @@
 	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{{base}}/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{base}}css/bootstrap.min.css">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 </head>

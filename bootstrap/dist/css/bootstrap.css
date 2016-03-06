@@ -5887,6 +5887,10 @@ a.bg-danger:focus, a.bg-danger:hover {
   background-color: #c9302c;
 }
 
+header {
+  margin-bottom: 1rem;
+}
+
 .m-x-auto {
   margin-right: auto !important;
   margin-left: auto !important;
