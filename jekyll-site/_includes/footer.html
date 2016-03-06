@@ -1,6 +1,45 @@
 <footer class="site-footer">
-  <!-- jQuery first, then Bootstrap JS. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="{{base}}js/tether.min.js"></script>
-  <script src="{{base}}js/bootstrap.min.js"></script>
+	<!-- jQuery first, then Bootstrap JS. -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="{{base}}js/tether.min.js"></script>
+	<script src="{{base}}js/bootstrap.min.js"></script>
+	<script>
+		function getSelectedText() {
+			var text = "";
+			if (typeof window.getSelection != "undefined") {
+				text = window.getSelection().toString();
+			} else if (typeof document.selection != "undefined" && document.selection.type == "Text") {
+				text = document.selection.createRange().text;
+			}
+			return text;
+		}
+					
+		function setSearchBox() {
+			var selectedText = getSelectedText();
+			if (selectedText) {
+				if( !(document.getElementById("search-box").value == selectedText)) {
+					console.log('set search box text');
+					$("#search-box").val(selectedText);
+					var url = "https://www.google.com/search?num=50&q=" + selectedText.replace(/ /g,"+");
+					$('#statute-search').attr("href", url);
+					$("#exCollapsingNavbar").collapse('show');
+				}
+			} else {
+				if( !( $("#search-box").is(":focus") ) ) {
+					$("#exCollapsingNavbar").collapse('hide');
+				}
+			}
+		}
+				
+		$('#search-box').on('input', function() {
+			var input = $(this).val().replace(/ /g,"+");
+			if (input) {
+				var url = "https://www.google.com/search?num=50&q=" + input;
+				$('#statute-search').attr("href", url);
+			}
+		});
+				
+		document.onmouseup = setSearchBox;
+		document.onkeyup = setSearchBox;
+	</script>
 </footer>
