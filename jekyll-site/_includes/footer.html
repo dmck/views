@@ -22,11 +22,12 @@
 					$("#search-box").val(selectedText);
 					var url = "https://www.google.com/search?num=50&q=" + selectedText.replace(/ /g,"+");
 					$('#statute-search').attr("href", url);
-					$("#exCollapsingNavbar").collapse('show');
+					$("#collapsingMainMenu").collapse('show');
 				}
 			} else {
 				if( !( $("#search-box").is(":focus") ) ) {
-					$("#exCollapsingNavbar").collapse('hide');
+					$("#collapsingMainMenu").collapse('hide');
+					$("#collapsingYearMenu").collapse('hide');
 				}
 			}
 		}
