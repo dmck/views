@@ -1,4 +1,30 @@
 //
+// HEADER
+//
+.site-header {
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+  }
+  padding-bottom: 1rem;
+}
+
+//
+// Year Selector
+//
+.navbar-fixed-bottom {
+  max-height: 65%;
+  padding: 0;
+  overflow: scroll;
+  .list-group {
+    margin: 1rem 0;
+  }
+}
+
+//
 // Typography
 //
 html {
@@ -35,14 +61,6 @@ html {
       width: calc(100% - 12rem);
     }
   }
-}
-
-//
-// Margins
-//
-body {
-  margin-top: 5rem;
-  margin-bottom: 1rem;
 }
 
 //

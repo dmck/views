@@ -1,3 +1,6 @@
+//
+// SEARCHBOX FUNCTIONS
+//
 function getSelectedText() {
   var text = "";
   if (typeof window.getSelection != "undefined") {
@@ -11,7 +14,7 @@ function getSelectedText() {
 function setSearchBox() {
   var selectedText = getSelectedText();
   // If user isn't in search-box
-  if( !($("#search-box").is(":focus")) ) {
+  if( !($("#mainNav").is(":focus")) ) {
     if (selectedText) {
       // Then if they have selected text:
       $("#search-box").val(selectedText);
@@ -19,6 +22,7 @@ function setSearchBox() {
       $('#statute-search').attr("href", url);
       url = "https://scholar.google.com/scholar?hl=en&q=\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"&as_sdt=4%2C10";
       $('#caselaw-search').attr("href", url);
+      openNav();
       if ( $( window ).width() < 544 ) {
         $("#collapsingMainMenu").collapse('show');
       }
@@ -26,12 +30,10 @@ function setSearchBox() {
       // On release, if not focused, then close
       $("#collapsingMainMenu").collapse('hide');
       $("#collapsingYearMenu").collapse('hide');
-      if( !($("#statute-search").is(":focus")) ) {
-        if( !($("#caselaw-search").is(":focus")) ) {
-          $("#search-box").val("");
-          $('#statute-search').attr("href", "");
-          $('#caselaw-search').attr("href", "");
-        }
+      if( !($("#mainNav").is(":focus")) ) {
+        $("#search-box").val("");
+        $('#statute-search').attr("href", "");
+        $('#caselaw-search').attr("href", "");
       }
     }
   }
@@ -54,3 +56,39 @@ $( "#search-form" ).submit(function( event ) {
 
 document.onmouseup = setSearchBox;
 document.onkeyup = setSearchBox;
+
+
+//
+// AUTOHIDE THE NAVBAR
+// http://www.jqueryscript.net/demo/Minimal-Auto-hide-Navigation-Bar-with-jQuery/
+//
+var prevScroll = 0,
+    curDir = 'down',
+    prevDir = 'up';
+
+function closeNav() {
+  curDir = 'down';
+  if(curDir != prevDir){
+  	$('.nav-top').stop();
+    $('.nav-top').animate({ top: '-100px' }, 300);
+    prevDir = curDir;
+  }
+}
+
+function openNav() {
+  curDir = 'up';
+  if(curDir != prevDir){
+  	$('.nav-top').stop();
+    $('.nav-top').animate({ top: '0px' }, 300);
+    prevDir = curDir;
+  }
+}
+
+$(window).scroll(function(){
+  if($(this).scrollTop() >= prevScroll){
+    closeNav();
+  } else {
+    openNav();
+  }
+  prevScroll = $(this).scrollTop();
+});
