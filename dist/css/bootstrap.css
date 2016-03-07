@@ -5564,29 +5564,6 @@ button.close {
   }
 }
 
-.index-number {
-  float: left;
-  width: 6em;
-  padding-right: 1rem;
-  text-align: right;
-}
-
-.index-text {
-  overflow: hidden;
-}
-
-.stat-number {
-  float: left;
-  min-width: 1em;
-  margin: 0 .5rem 0 0;
-  text-align: right;
-}
-
-.stat-text {
-  display: table-cell;
-  margin: 0;
-}
-
 .clearfix::after {
   display: table;
   clear: both;
@@ -5885,10 +5862,6 @@ a.bg-warning:focus, a.bg-warning:hover {
 
 a.bg-danger:focus, a.bg-danger:hover {
   background-color: #c9302c;
-}
-
-header {
-  margin-bottom: 1rem;
 }
 
 .m-x-auto {
@@ -6234,5 +6207,65 @@ header {
   .hidden-print {
     display: none !important;
   }
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 544px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+.container-fluid {
+  max-width: 900px;
+}
+
+.navbar .form-inline {
+  padding-top: .5rem;
+}
+
+@media (min-width: 544px) {
+  .navbar .form-inline {
+    padding-top: 0;
+  }
+  .navbar .navbar-toggleable-xs {
+    width: calc(100% - 12rem);
+  }
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+.index-number {
+  float: left;
+  width: 6em;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+.index-text {
+  overflow: hidden;
+}
+
+.stat-number {
+  float: left;
+  min-width: 1em;
+  margin: 0 .5rem 0 0;
+  text-align: right;
+}
+
+.stat-text {
+  display: table-cell;
+  margin: 0;
 }
 /*# sourceMappingURL=bootstrap.css.map */

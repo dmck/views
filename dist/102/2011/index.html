@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<!-- _includes/base.html -->
-	
+	<!-- ASSIGN BASE -->
+	<!-- http://stackoverflow.com/questions/7985081/how-to-deploy-a-jekyll-site-locally-with-css-js-and-background-images-included -->
 	
 	
 	<!-- Required meta tags always come first -->
@@ -15,26 +15,68 @@
 ">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
-	<link rel="canonical" href="c://Users/Daniel/Desktop/test/dist//102/2011/">
-	<link rel="alternate" type="application/rss+xml" title="Your awesome title" href="c://Users/Daniel/Desktop/test/dist//feed.xml">
+	<link rel="canonical" href="//102/2011/">
+	<link rel="alternate" type="application/rss+xml" title="Your awesome title" href="//feed.xml">
 </head>
 	<body>
 		<header class="site-header">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12">
-				<nav class="navbar navbar-light bg-faded">
+				<nav class="navbar navbar-light bg-faded" id="mainNav">
 					<a class="navbar-brand" href="#">Navbar</a>
-					<button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-					&#9776;
+					
+						<button class="btn dropdown-toggle navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingYearMenu">
+						Year
+						</button>
+					
+					<button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapsingMainMenu" aria-expanded="true">
+					☰
 					</button>
-				</nav>
-				<div class="collapse" id="exCollapsingNavbar">
-					<div class="bg-inverse p-a-1">
-						<h4>Collapsed content</h4>
-						<span class="text-muted">Toggleable via the navbar brand.</span>
+					<div class="collapse navbar-toggleable-xs pull-xs-right" id="collapsingMainMenu" aria-expanded="true">
+						<form class="form-inline pull-xs-right" action="http://google.com" method="get" id="search-form">
+							<div class="input-group" id="search-input-group">
+								<input type="text" class="form-control" id="search-box" placeholder="Search for...">
+								<div class="input-group-btn">
+									<input class="btn btn-primary" style="display:none;" type="submit">
+									<a class="btn btn-primary" href="#" role="button" id="statute-search">Statute</a>
+									<a class="btn btn-info" href="#" role="button" id="caselaw-search">Caselaw</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="collapse" id="collapsingYearMenu">
+					<div class="p-a-1">
+						<div class="list-group">
+							
+								
+									<a href="/102/2015/" class="list-group-item">2015</a>
+								
+							
+								
+									<a href="/102/2014/" class="list-group-item">2014</a>
+								
+							
+								
+									<a href="/102/2013/" class="list-group-item">2013</a>
+								
+							
+								
+									<a href="/102/2012/" class="list-group-item">2012</a>
+								
+							
+								
+									<a href="/102/2011/" class="list-group-item active">2011</a>
+								
+							
+								
+									<a href="/102/2010/" class="list-group-item">2010</a>
+								
+							
+						</div>
 					</div>
 				</div>
+				</nav>
 			</div>
 		</div>
 	</div>
@@ -577,10 +619,66 @@ s. 13, ch. 90-201; s. 13, ch. 91-1; s. 1, ch. 91-201; s. 4, ch. 91-429; s. 9, ch
 	</div>
 </div>
 		<footer class="site-footer">
-  <!-- jQuery first, then Bootstrap JS. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="../../js/tether.min.js"></script>
-  <script src="../../js/bootstrap.min.js"></script>
+	<!-- jQuery first, then Bootstrap JS. -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="../../js/tether.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+	<script>
+		function getSelectedText() {
+			var text = "";
+			if (typeof window.getSelection != "undefined") {
+				text = window.getSelection().toString();
+			} else if (typeof document.selection != "undefined" && document.selection.type == "Text") {
+				text = document.selection.createRange().text;
+			}
+			return text;
+		}
+					
+		function setSearchBox() {
+			var selectedText = getSelectedText();
+			// If user isn't in search-box
+			if( !($("#search-box").is(":focus")) ) {
+				if (selectedText) {
+					// Then if they have selected text:
+					$("#search-box").val(selectedText);
+					var url = "https://www.google.com/search?num=50&q=\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"";
+					$('#statute-search').attr("href", url);
+					url = "https://scholar.google.com/scholar?hl=en&q=\""	+ selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"&as_sdt=4%2C10";
+					$('#caselaw-search').attr("href", url);
+					if ( $( window ).width() < 544 ) {
+						$("#collapsingMainMenu").collapse('show');
+					}
+				} else {
+					// On release, if not focused, then close
+					$("#collapsingMainMenu").collapse('hide');
+					$("#collapsingYearMenu").collapse('hide');
+					$("#search-box").val("");
+					$('#statute-search').attr("href", "");
+					$('#caselaw-search').attr("href", "");
+				}
+			}
+		}
+
+
+				
+		$('#search-box').on('input', function() {
+			var input = $(this).val().replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+");
+			if (input) {
+					var url = "https://www.google.com/search?num=50&q=\"" + input + "\"";
+					$('#statute-search').attr("href", url);
+					url = "https://scholar.google.com/scholar?hl=en&q=\"" + input + "\"&as_sdt=4%2C10";
+					$('#caselaw-search').attr("href", url);
+			}
+		});
+
+		$( "#search-form" ).submit(function( event ) {
+			event.preventDefault();
+			$( "#statute-search" )[0].click();
+		});
+
+		document.onmouseup = setSearchBox;
+		document.onkeyup = setSearchBox;
+	</script>
 </footer>
 	</body>
 </html>

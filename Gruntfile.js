@@ -23,14 +23,21 @@ grunt.initConfig({
             command: 'jekyll build --verbose -s, --source jekyll-site -d dist',
         },
     },
-
+    'http-server': {
+      dev: {
+        root: 'dist',
+        port: '80',
+        host: '192.168.0.8',
+      }
+    }
 });
 
   grunt.loadNpmTasks('grunt-hub');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-http-server');
 
   // compile bootstrap, copy, compile jekyll
-  grunt.registerTask('default', ['hub', 'copy:bootstrap', 'shell']);
+  grunt.registerTask('default', ['hub', 'copy:bootstrap', 'shell', 'http-server']);
 
 };	

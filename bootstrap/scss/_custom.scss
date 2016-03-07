@@ -1,0 +1,83 @@
+//
+// Typography
+//
+html {
+  font-size: 16px;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+}
+
+//
+// Container
+//
+.container-fluid {
+  max-width: 900px;
+}
+
+//
+// Search Bar
+//
+.navbar {
+  .form-inline {
+    padding-top: .5rem;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar {
+    .form-inline {
+      padding-top: 0;
+    }
+    .navbar-toggleable-xs {
+      width: calc(100% - 12rem);
+    }
+  }
+}
+
+//
+// Header Margin
+//
+header {
+  margin-bottom: 1rem;
+}
+
+//
+// Statute Indexes
+//
+
+.index-number {
+  float: left;
+  width: 6em;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+.index-text {
+  overflow: hidden;
+}
+
+//
+// Statutes Pages
+//
+
+.stat-number {
+  float: left;
+  min-width: 1em;
+  margin: 0 .5rem 0 0;
+  text-align: right;
+}
+
+.stat-text {
+  display: table-cell;
+  margin: 0;
+}
