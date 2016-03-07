@@ -18,13 +18,6 @@ html {
 }
 
 //
-// Container
-//
-.container-fluid {
-  max-width: 900px;
-}
-
-//
 // Search Bar
 //
 .navbar {
@@ -45,9 +38,10 @@ html {
 }
 
 //
-// Header Margin
+// Margins
 //
-header {
+body {
+  margin-top: 5rem;
   margin-bottom: 1rem;
 }
 

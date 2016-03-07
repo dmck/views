@@ -6225,10 +6225,6 @@ html {
   }
 }
 
-.container-fluid {
-  max-width: 900px;
-}
-
 .navbar .form-inline {
   padding-top: .5rem;
 }
@@ -6242,7 +6238,8 @@ html {
   }
 }
 
-header {
+body {
+  margin-top: 5rem;
   margin-bottom: 1rem;
 }
 

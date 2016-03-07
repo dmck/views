@@ -3,7 +3,13 @@
 	{% include head.html %}
 	<body>
 		{% include header.html %}
-		{{ content }}
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
+					{{ content }}
+				</div>
+			</div>
+		</div>
 		{% include footer.html %}
 	</body>
 </html>
