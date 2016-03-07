@@ -1,35 +1,35 @@
 module.exports = function(grunt) {
 
 grunt.initConfig({
-	// compile 'bootrap'
-    hub: {
-      all: {
-        src: ['bootstrap/Gruntfile.js'],
-        tasks: ['default'],
+  // compile 'bootrap'
+  hub: {
+    all: {
+      src: ['bootstrap/Gruntfile.js'],
+      tasks: ['default'],
+    },
+  },
+  // copy compiled 'bootstrap' to 'jekyll-site'
+  copy: {
+    bootstrap: {
+	    expand: true,
+	    cwd: 'bootstrap/dist',
+	    src: '**',
+	    dest: 'jekyll-site/',
+    },
+  },
+  // compile jekyll-site to 'dist'
+  shell: {
+      build: {
+          command: 'jekyll build --verbose -s, --source jekyll-site -d dist',
       },
-    },
-    // copy compiled 'bootstrap' to 'jekyll-site'
-    copy: {
-      bootstrap: {
-		    expand: true,
-		    cwd: 'bootstrap/dist',
-		    src: '**',
-		    dest: 'jekyll-site/',
-      },
-    },
-    // compile jekyll-site to 'dist'
-    shell: {
-        build: {
-            command: 'jekyll build --verbose -s, --source jekyll-site -d dist',
-        },
-    },
-    'http-server': {
-      dev: {
-        root: 'dist',
-        port: '80',
-        host: '192.168.0.8',
-      }
+  },
+  'http-server': {
+    dev: {
+      root: 'dist',
+      port: '80',
+      host: '192.168.1.4',
     }
+  }
 });
 
   grunt.loadNpmTasks('grunt-hub');
