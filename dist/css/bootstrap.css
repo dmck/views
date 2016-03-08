@@ -6221,6 +6221,11 @@ a.bg-danger:focus, a.bg-danger:hover {
   width: 100%;
 }
 
+article {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
 .navbar-fixed-bottom {
   max-height: 65%;
   padding: 0;
