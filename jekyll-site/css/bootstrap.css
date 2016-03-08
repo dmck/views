@@ -6213,7 +6213,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   padding-bottom: 1rem;
 }
 
-.site-header .top-nav {
+.site-header .nav-top {
   position: fixed;
   top: 0;
   left: 0;

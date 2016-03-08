@@ -69,8 +69,8 @@ var prevScroll = 0,
 function closeNav() {
   curDir = 'down';
   if(curDir != prevDir){
-  	$('.nav-top').stop();
-    $('.nav-top').animate({ top: '-100px' }, 300);
+  	$('#mainNav').stop();
+    $('#mainNav').animate({ top: '-100px' }, 300);
     prevDir = curDir;
   }
 }
@@ -78,8 +78,8 @@ function closeNav() {
 function openNav() {
   curDir = 'up';
   if(curDir != prevDir){
-  	$('.nav-top').stop();
-    $('.nav-top').animate({ top: '0px' }, 300);
+  	$('#mainNav').stop();
+    $('#mainNav').animate({ top: '0px' }, 300);
     prevDir = curDir;
   }
 }
