@@ -4,10 +4,10 @@
     <title>VIEW§ - Indented Statute Viewer</title>
     <description>Laws are easier to read and understand when they are indented, searchable, cite to their history, and cite to caselaw. VIEW§ is a tool that tries to do just that for Florida&#39;s Workers&#39; Compensation Law.
 </description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Mar 2016 20:09:26 -0500</pubDate>
-    <lastBuildDate>Tue, 08 Mar 2016 20:09:26 -0500</lastBuildDate>
+    <link>//</link>
+    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 08 Mar 2016 20:25:26 -0500</pubDate>
+    <lastBuildDate>Tue, 08 Mar 2016 20:25:26 -0500</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -15,8 +15,8 @@
         <description>&lt;p&gt;This is my first post here. I wonder if the CSS and Javascript loaded.&lt;/p&gt;
 </description>
         <pubDate>Sun, 06 Mar 2016 00:00:00 -0500</pubDate>
-        <link>/2016/03/06/hello-world.html</link>
-        <guid isPermaLink="true">/2016/03/06/hello-world.html</guid>
+        <link>//2016/03/06/hello-world.html</link>
+        <guid isPermaLink="true">//2016/03/06/hello-world.html</guid>
         
         
       </item>
@@ -39,8 +39,8 @@
 
 </description>
         <pubDate>Sat, 05 Mar 2016 12:56:18 -0500</pubDate>
-        <link>/jekyll/update/2016/03/05/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">/jekyll/update/2016/03/05/welcome-to-jekyll.html</guid>
+        <link>//jekyll/update/2016/03/05/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">//jekyll/update/2016/03/05/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
