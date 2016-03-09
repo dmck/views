@@ -12,32 +12,27 @@ grunt.initConfig({
   copy: {
     bootstrap: {
 	    expand: true,
-	    cwd: '_bootstrap/dist',
+	    cwd: '_bootstrap/dist/css/',
 	    src: '**',
-	    dest: '/',
+	    dest: 'css/',
     },
   },
   // compile jekyll-site to 'dist'
   shell: {
       build: {
-          command: 'jekyll build --verbose',
+          command: 'jekyll build',
+      },
+      serve: {
+          command: 'jekyll serve',
       },
   },
-  'http-server': {
-    dev: {
-      root: '_site',
-      port: '80',
-      host: '192.168.1.4',
-    }
-  }
 });
 
   grunt.loadNpmTasks('grunt-hub');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-shell');
-  grunt.loadNpmTasks('grunt-http-server');
 
   // compile bootstrap, copy, compile jekyll
-  grunt.registerTask('default', ['hub', 'copy:bootstrap', 'shell', 'http-server']);
+  grunt.registerTask('default', ['hub', 'copy:bootstrap', 'shell']);
 
 };	
