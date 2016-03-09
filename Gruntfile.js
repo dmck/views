@@ -4,7 +4,7 @@ grunt.initConfig({
   // compile 'bootrap'
   hub: {
     all: {
-      src: ['bootstrap/Gruntfile.js'],
+      src: ['_bootstrap/Gruntfile.js'],
       tasks: ['default'],
     },
   },
@@ -12,15 +12,15 @@ grunt.initConfig({
   copy: {
     bootstrap: {
 	    expand: true,
-	    cwd: 'bootstrap/dist',
+	    cwd: '_bootstrap/dist',
 	    src: '**',
-	    dest: 'jekyll-site/',
+	    dest: '/',
     },
   },
   // compile jekyll-site to 'dist'
   shell: {
       build: {
-          command: 'jekyll build --verbose -s, --source jekyll-site',
+          command: 'jekyll build --verbose',
       },
   },
   'http-server': {

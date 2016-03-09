@@ -5,7 +5,7 @@ _site
 .jekyll-metadata
 
 # Bootstrap .gitignore
-bootstrap/*
+_bootstrap/*
 !/bootstrap/scss/
 !/bootstrap/LICENSE
 
