@@ -12,9 +12,9 @@ description: > # this means to ignore newlines until "baseurl:"
   Laws are easier to read and understand when they are indented, searchable,
   cite to their history, and cite to caselaw. VIEW§ is a tool that tries to
   do just that for Florida's Workers' Compensation Law.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "/views/" # the base hostname & protocol for your site
-github_username:  dmck
+baseurl: "/views" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+github_username: dmck
 exclude:
   - node_modules
 gems:
