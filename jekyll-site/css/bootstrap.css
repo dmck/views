@@ -6226,6 +6226,14 @@ article {
   padding-bottom: 1rem;
 }
 
+footer {
+  padding-bottom: 1rem;
+}
+
+footer hr {
+  margin: .5rem 0;
+}
+
 .navbar-fixed-bottom {
   max-height: 65%;
   padding: 0;
