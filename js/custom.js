@@ -30,7 +30,7 @@ function setSearchBox() {
       // On release, if not focused, then close
       $("#collapsingMainMenu").collapse('hide');
       $("#collapsingYearMenu").collapse('hide');
-      if( !($("#mainNav").is(":focus")) ) {
+      if( !($("#search-box").is(":focus")) ) {
         $("#search-box").val("");
         $('#statute-search').attr("href", "");
         $('#caselaw-search').attr("href", "");
