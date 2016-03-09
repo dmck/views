@@ -17,5 +17,7 @@ url: "/views/" # the base hostname & protocol for your site
 github_username:  dmck
 exclude:
   - node_modules
+gems:
+  - jekyll-sitemap
 # Build settings
 markdown: kramdown
