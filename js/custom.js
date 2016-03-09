@@ -92,3 +92,18 @@ $(window).scroll(function(){
   }
   prevScroll = $(this).scrollTop();
 });
+
+//
+// Trianglify the background!
+//
+var pattern = Trianglify({
+width: window.innerWidth,
+height: window.innerHeight
+});
+var triangleBG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+triangleBG = pattern.svg();
+triangleBG.setAttribute("opacity","0");
+triangleBG.setAttribute("style","position: fixed; top: 0; left: 0;z-index:-2");
+triangleBG.setAttribute("id","triBG");
+document.body.appendChild(triangleBG);
+$("#triBG").fadeTo("slow", "1");
