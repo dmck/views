@@ -20,12 +20,12 @@ grunt.initConfig({
   // compile jekyll-site to 'dist'
   shell: {
       build: {
-          command: 'jekyll build --verbose -s, --source jekyll-site -d dist',
+          command: 'jekyll build --verbose -s, --source jekyll-site',
       },
   },
   'http-server': {
     dev: {
-      root: 'dist',
+      root: '_site',
       port: '80',
       host: '192.168.1.4',
     }
