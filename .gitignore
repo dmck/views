@@ -1,9 +1,13 @@
+
 # Jekyll .gitignore
 _site
 .sass-cache
 .jekyll-metadata
 
 # Bootstrap .gitignore
+bootstrap/*
+!/bootstrap/scss/
+!/bootstrap/LICENSE
 
 # Ignore docs files
 _gh_pages
