@@ -36,9 +36,9 @@
 						<div class="list-group">
 							{% for item in page.years %}
 								{% if item.number == page.year %}
-									<a href="{{ base }}{{ site.baseurl}}/{{ item.link }}" class="list-group-item active">{{ item.number }}</a>
+									<a href="{{ site.baseurl}}/{{ item.link }}" class="list-group-item active">{{ item.number }}</a>
 								{% else %}
-									<a href="{{ base }}{{ site.baseurl}}/{{ item.link }}" class="list-group-item">{{ item.number }}</a>
+									<a href="{{ site.baseurl}}/{{ item.link }}" class="list-group-item">{{ item.number }}</a>
 								{% endif %}
 							{% endfor %}
 						</div>
