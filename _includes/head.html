@@ -17,6 +17,10 @@
 	<meta name="apple-mobile-web-app-title" content="FS440">
 	<meta name="theme-color" content="#808080">
 
+	<style>
+		body {background-image: url("{{ base }}{{ site.baseurl }}/img/triangles.svg"); background-attachment:fixed; background-size:cover;}
+	</style>
+
 	<!-- ASSIGN BASE -->
 	<!-- http://stackoverflow.com/questions/7985081/how-to-deploy-a-jekyll-site-locally-with-css-js-and-background-images-included -->
 	{% assign lvl = page.url | append:'X' | split:'/' | size %}
