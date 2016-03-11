@@ -6215,10 +6215,10 @@ article {
 }
 
 article .jumbotron {
-  background: -webkit-gradient(linear, left top, right top, from(#f7f7f9), to(#92c4d2));
-  background: -webkit-linear-gradient(left, #f7f7f9 0%, #92c4d2 100%);
-  background:      -o-linear-gradient(left, #f7f7f9 0%, #92c4d2 100%);
-  background:         linear-gradient(to right, #f7f7f9 0%, #92c4d2 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#f7f7f9), to(#d4d4d4));
+  background: -webkit-linear-gradient(left, #f7f7f9 0%, #d4d4d4 100%);
+  background:      -o-linear-gradient(left, #f7f7f9 0%, #d4d4d4 100%);
+  background:         linear-gradient(to right, #f7f7f9 0%, #d4d4d4 100%);
 }
 
 .faded-background {
