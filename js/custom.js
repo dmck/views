@@ -28,12 +28,12 @@ function setSearchBox() {
       }
     } else {
       // On release, if not focused, then close
-      $("#collapsingMainMenu").collapse('hide');
       $("#collapsingYearMenu").collapse('hide');
       if( !($("#search-box").is(":focus")) ) {
-        $("#search-box").val("");
-        $('#statute-search').attr("href", "");
-        $('#caselaw-search').attr("href", "");
+      	$("#collapsingMainMenu").collapse('hide');
+       	$("#search-box").val("");
+       	$('#statute-search').attr("href", "");
+       	$('#caselaw-search').attr("href", "");
       }
     }
   }
