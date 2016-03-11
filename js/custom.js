@@ -16,16 +16,18 @@ function setSearchBox() {
   // If user isn't in search-box
   if( !($("#mainNav").is(":focus")) ) {
     if (selectedText) {
-      // Then if they have selected text:
-      $("#search-box").val(selectedText);
-      var url = "https://www.google.com/search?num=50&q=\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"";
-      $('#statute-search').attr("href", url);
-      url = "https://scholar.google.com/scholar?hl=en&q=\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"&as_sdt=4%2C10";
-      $('#caselaw-search').attr("href", url);
-      openNav();
-      if ( $( window ).width() < 544 ) {
-        $("#collapsingMainMenu").collapse('show');
-      }
+    	if( !($("#search-box").is(":focus")) ) {
+			// Then if they have selected text:
+			$("#search-box").val(selectedText);
+		}
+		var url = "https://www.google.com/search?num=50&q=\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"";
+		$('#statute-search').attr("href", url);
+		url = "https://scholar.google.com/scholar?hl=en&q=\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"&as_sdt=4%2C10";
+		$('#caselaw-search').attr("href", url);
+		openNav();
+		if ( $( window ).width() < 544 ) {
+			$("#collapsingMainMenu").collapse('show');
+  		}
     } else {
       // On release, if not focused, then close
       $("#collapsingYearMenu").collapse('hide');
