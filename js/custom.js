@@ -20,7 +20,7 @@ function setSearchBox() {
 			// Then if they have selected text:
 			$("#search-box").val(selectedText);
 		}
-		var url = "https://www.google.com/search?num=50&q=\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"";
+		var url = "https://www.google.com/search?num=50&q=site%3Admck.github.io%2Fviews%2F+\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"";
 		$('#statute-search').attr("href", url);
 		url = "https://scholar.google.com/scholar?hl=en&q=\"" + selectedText.replace(/[^a-zA-Z0-9:(),.“”$;-]/g,"+") + "\"&as_sdt=4%2C10";
 		$('#caselaw-search').attr("href", url);
