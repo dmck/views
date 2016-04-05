@@ -1,4 +1,10 @@
 <head>
+	<script>
+		var host = "dmck.github.io";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+		    window.location.protocol = "https";
+	</script>
+
 	<link rel="apple-touch-icon" sizes="57x57" href="{{base}}{{ site.baseurl }}/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="{{base}}{{ site.baseurl }}/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="{{base}}{{ site.baseurl }}/apple-touch-icon-72x72.png">
