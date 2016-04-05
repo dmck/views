@@ -6256,7 +6256,7 @@ footer p {
 .navbar-fixed-bottom {
   max-height: 65%;
   padding: 0;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .navbar-fixed-bottom .list-group {
