@@ -14,6 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
   do just that for Florida's Workers' Compensation Law.
 baseurl: "/views" # the subpath of your site, e.g. /blog
 url: "https://dmck.github.io" # the base hostname & protocol for your site
+enforce_ssl: "dmck.github.io"
 github_username: dmck
 exclude:
   - node_modules
